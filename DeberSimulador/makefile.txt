@@ -1,0 +1,57 @@
+#
+# A simple makefile for compiling three java classes
+#
+
+# define a makefile variable for the java compiler
+#
+JCC = javac
+
+# define a makefile variable for compilation flags
+# the -g flag compiles with debugging information
+#
+JFLAGS = -g
+
+# typing 'make' will invoke the first target entry in the makefile 
+# (the default one in this case)
+#
+default: DiscreteEventSimulation.class Event.class EventHandler.class EventHeap.class Machine.class ReadFile.class Repairman.class Simulation.class User.class WriteFile.class
+
+# this target entry builds the Event class
+# the Event.class file is dependent on the Event.java file
+# and the rule associated with this entry gives the command to create it
+#
+DiscreteEventSimulation.class: DiscreteEventSimulation.java
+        $(JCC) $(JFLAGS) DiscreteEventSimulation.java
+
+Event.class: Event.java
+        $(JCC) $(JFLAGS) Event.java
+
+EventHandler.class: EventHandler.java
+        $(JCC) $(JFLAGS) EventHandler.java
+
+EventHeap.class: EventHeap.java
+        $(JCC) $(JFLAGS) EventHeap.java
+
+Machine.class: Machine.java
+        $(JCC) $(JFLAGS) Machine.java
+
+ReadFile.class: ReadFile.java
+        $(JCC) $(JFLAGS) ReadFile.java
+
+Repairman.class: Repairman.java
+        $(JCC) $(JFLAGS) Repairman.java
+
+Simulation.class: Simulation.java
+        $(JCC) $(JFLAGS) Simulation.java
+
+User.class: User.java
+        $(JCC) $(JFLAGS) User.java
+
+WriteFile.class: WriteFile.java
+        $(JCC) $(JFLAGS) WriteFile.java
+		
+# To start over from scratch, type 'make clean'.  
+# Removes all .class files, so that the next make rebuilds them
+#
+clean: 
+        $(RM) *.class
