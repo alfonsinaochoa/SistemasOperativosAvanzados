@@ -22,7 +22,8 @@ public class Repairman implements EventHandler {
                         double timeToRepair = lector.tiempos.get(tiempo);                        
 			//double timeToRepair = Math.abs(s.generator.nextGaussian()*MTTRvariance+MTTR);
 			e.setType(s.finishRepair);
-			e.setTime(s.now+timeToRepair);
+                        e.setTime(timeToRepair);
+			//e.setTime(s.now+timeToRepair);                       
 			s.scheduleEvent(e);
 			return;
 		}

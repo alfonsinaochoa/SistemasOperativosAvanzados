@@ -22,7 +22,8 @@ public class Machine implements EventHandler {
 			working=true;
                         double timeToNextFailure = lector.tiempos.get(tiempo);
 			//double timeToNextFailure = Math.abs(s.generator.nextGaussian()*MTTFvariance+MTTF);
-			e.setTime(s.now+timeToNextFailure);
+			//e.setTime(s.now+timeToNextFailure);
+                        e.setTime(timeToNextFailure);
 			e.setType(s.failure);
 			s.scheduleEvent(e);
 			return;

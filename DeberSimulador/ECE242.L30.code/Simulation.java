@@ -54,7 +54,7 @@ public class Simulation {
                     tiempo = tiempo + 1;
 		}
                 w.escribirArchivo();                                
-                //System.out.println(m.lector.readFileTime(w.archivo.getName(), "finishing repair", "machine failure")); 
+                //System.out.println(m.lector.readFileTime(w.archivo.getName(), "finishing repair", "machine failure"));                   
 	}
 	// events
 	public final int working = 1;
